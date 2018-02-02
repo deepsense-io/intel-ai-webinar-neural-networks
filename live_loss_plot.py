@@ -24,7 +24,7 @@ class PlotLosses(Callback):
         self.logs = []
 
     def on_epoch_end(self, epoch, logs={}):
-        self.logs.append(logs)
+        self.logs.append(logs.copy())
 
         clear_output(wait=True)
         plt.figure(figsize=self.figsize)
